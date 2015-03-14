@@ -3,8 +3,12 @@ branches:
   only:
   - sources
 install:
-  - pip install pelican ghp-import markdown
+- pip install pelican ghp-import markdown
+- git config remote.origin.url https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git
 script:
-  - make publish
+- make publish
 after_success:
-  #- 'make github 2> /dev/null'
+- make github
+env:
+  global:
+    secure: IPRWNKPm1VQkBN3YsHM4w7GCKaTCuLHGVs37673gayUwAALamP0wW44I/eO6OvQ508bNV8oqvFKeH8JtXOWuxzIihl95KK85fBbylhPLhVnUHBl0uHcKYGJQrvAspRESFXNhYrjwPeZK0HoIJq7c3kaCrr0Q9RRdi98qAoHqMso=

@@ -1,5 +1,7 @@
 # Content for freecellera.org
 
+[![Build Status](https://travis-ci.org/Freecellera/freecellera.github.io.svg?branch=sources)](https://travis-ci.org/Freecellera/freecellera.github.io)
+
 To contribute please fork this repo and submit a pull request.
 
 Website is generated using [Pelican](http://docs.getpelican.com/en/3.5.0/).

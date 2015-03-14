@@ -8,6 +8,3 @@ script:
   - make publish
 after_success:
   #- 'make github 2> /dev/null'
-env:
-  global:
-  - secure: xxx

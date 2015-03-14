@@ -1,0 +1,13 @@
+language: python
+branches:
+  only:
+  - sources
+install:
+  - pip install pelican ghp-import markdown
+script:
+  - make publish
+after_success:
+  #- 'make github 2> /dev/null'
+env:
+  global:
+  - secure: xxx

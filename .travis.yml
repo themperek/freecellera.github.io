@@ -1,15 +1,25 @@
 language: python
+python:
+  - "2.7"
+before_install:
+  - git config user.name travis-ci
+  - mkdir -p .travis
+  - openssl aes-256-cbc -K $encrypted_0e798ea70671_key -iv $encrypted_0e798ea70671_iv -in .travis.id_rsa.enc -out .travis/id_rsa -d
+  - chmod 600 .travis/id_rsa
+  - eval `ssh-agent -s`
+  - ssh-add .travis/id_rsa
+install:
+  - pip install pelican ghp-import markdown
+script:
+  - git remote remove origin
+  - git remote add origin git@github.com:Freecellera/freecellera.github.io.git
+  - git fetch origin
+  - make publish
+  #- cp content/extra/* output
+  - ghp-import output
+  - git push -f origin master
+notifications:
+  email: false
 branches:
   only:
   - sources
-install:
-- pip install pelican ghp-import markdown
-- git config remote.origin.url https://${GH_TOKEN}@github.com/Freecellera/freecellera.github.io.git
-- git config user.name travis-ci
-script:
-- make publish
-after_success:
-- make github 2> /dev/null
-env:
-  global:
-    secure: N6EQRCas0lMqAM4m8gS5uaW/7qbU1q2tak8fnfRf2mmRBB6eGTV/zS12wSmwChG/nQb4QbqKJV1xB/TdTXZQ/2Ti5o7/CgLF401pheDYyA9t2lMgG0Sob9VlYW42jDh9kq9jpuesn3WR9ijTNopHU/yk3VWB4AgB9toVzcOG4e0=

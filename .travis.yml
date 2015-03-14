@@ -8,7 +8,7 @@ install:
 script:
 - make publish
 after_success:
-- make github
+- make github 2> /dev/null
 env:
   global:
-    secure: IPRWNKPm1VQkBN3YsHM4w7GCKaTCuLHGVs37673gayUwAALamP0wW44I/eO6OvQ508bNV8oqvFKeH8JtXOWuxzIihl95KK85fBbylhPLhVnUHBl0uHcKYGJQrvAspRESFXNhYrjwPeZK0HoIJq7c3kaCrr0Q9RRdi98qAoHqMso=
+    secure: N6EQRCas0lMqAM4m8gS5uaW/7qbU1q2tak8fnfRf2mmRBB6eGTV/zS12wSmwChG/nQb4QbqKJV1xB/TdTXZQ/2Ti5o7/CgLF401pheDYyA9t2lMgG0Sob9VlYW42jDh9kq9jpuesn3WR9ijTNopHU/yk3VWB4AgB9toVzcOG4e0=

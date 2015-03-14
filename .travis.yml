@@ -4,7 +4,7 @@ branches:
   - sources
 install:
 - pip install pelican ghp-import markdown
-- git config remote.origin.url https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git
+- git config remote.origin.url https://${GH_TOKEN}@github.com/Freecellera/freecellera.github.io.git
 script:
 - make publish
 after_success:

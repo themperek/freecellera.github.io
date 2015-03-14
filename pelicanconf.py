@@ -37,4 +37,4 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images']
 
 INDEX_SAVE_AS = 'blog_index.html'
-MENUITEMS = [('Blog', 'blog_index.html')]
+MENUITEMS = [('Home', 'index.html'), ('Blog', 'blog_index.html')]

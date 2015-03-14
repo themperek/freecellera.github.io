@@ -2,7 +2,7 @@ language: python
 python:
   - "2.7"
 before_install:
- - git config --global user.email "freecellera@freecellera.org"
+  - git config --global user.email "freecellera@freecellera.org"
   - git config user.name travis-ci
   - git config push.default simple
   - mkdir -p .travis

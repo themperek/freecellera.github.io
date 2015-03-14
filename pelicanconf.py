@@ -34,7 +34,8 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-STATIC_PATHS = ['images']
-
 INDEX_SAVE_AS = 'blog_index.html'
-MENUITEMS = [('Home', 'index.html'), ('Blog', 'blog_index.html')]
+
+USE_CUSTOM_MENU = True
+MENUITEMS = [('Home', '/index.html'), 
+            ('Blog', '/blog_index.html')]

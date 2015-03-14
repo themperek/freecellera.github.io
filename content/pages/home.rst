@@ -1,6 +1,8 @@
 Home
 ####
 
+:save_as: index.html
+
 Because requiring $7,500 or $25,000 USD a year per member seems counter to the
 stated goal, "to develop technology standards that are *balanced*, *open*, and
 benefit the *worldwide* electronics industry." (emphasis added)

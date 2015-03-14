@@ -6,7 +6,7 @@ To contribute please fork this repo and submit a pull request.
 
 Content lives in `content/pages` and can be either Markdown or ReStructuredText.  Blog style postings live in `content`.
 
-On any change/commit page is automatic generated and available at avaliable at http://freecellera.org/ (can take few minutes).
+On any change/commit page is automatic generated and available at http://freecellera.org/ (can take few minutes).
 
 Website is generated using [Pelican](http://docs.getpelican.com/en/3.5.0/).
 

@@ -4,20 +4,20 @@ python:
 before_install:
   - git config user.name travis-ci
   - mkdir -p .travis
-  - openssl aes-256-cbc -K $encrypted_0e798ea70671_key -iv $encrypted_0e798ea70671_iv -in .travis.id_rsa.enc -out .travis/id_rsa -d
-  - chmod 600 .travis/id_rsa
-  - eval `ssh-agent -s`
-  - ssh-add .travis/id_rsa
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then openssl aes-256-cbc -K $encrypted_0e798ea70671_key -iv $encrypted_0e798ea70671_iv -in .travis.id_rsa.enc -out .travis/id_rsa -d; fi'
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then chmod 600 .travis/id_rsa; fi' 
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then eval `ssh-agent -s`; fi' 
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then ssh-add .travis/id_rsa; fi'  
 install:
   - pip install pelican ghp-import markdown
 script:
-  - git remote remove origin
-  - git remote add origin git@github.com:Freecellera/freecellera.github.io.git
-  - git fetch origin
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then git remote remove origin; fi' 
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then git remote add origin git@github.com:Freecellera/freecellera.github.io.git; fi'  
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then git fetch origin; fi'
   - make publish
-  #- cp content/extra/* output
-  - ghp-import -m "Automatic Generate Pelican site" -b master output
-  - git push -f origin master
+  #- echo 'freecellera.org' > output/CNAME
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then ghp-import -m "Automatic Generate Pelican site" -b master output; fi'
+  - 'if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then git push -f origin master; fi'
 notifications:
   email: false
 branches:

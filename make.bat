@@ -11,7 +11,7 @@ set PELICANOPTS=
 
 
 if "%1" == "publish" (
-	%PELICAN% %INPUTDIR% -o %OUTPUTDIR% -s %PUBLISHCONF% -t theme %PELICANOPTS% 
+	%PELICAN% %INPUTDIR% -o %OUTPUTDIR% -s %PUBLISHCONF% %PELICANOPTS% 
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The HTML pages are in %OUTPUTDIR%.

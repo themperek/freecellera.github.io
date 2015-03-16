@@ -11,10 +11,10 @@ TIMEZONE = 'GMT'
 
 DEFAULT_LANG = u'en'
 
-THEME = "notmyidea"
+THEME = "theme"
 
 # Social widget
-SOCIAL = [('github', 'http://github.com/freecellera')]
+SOCIAL = [('github', 'http://github.com/freecellera'), ('google group', 'https://groups.google.com/d/forum/freecellera')]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -37,5 +37,5 @@ DEFAULT_PAGINATION = 10
 INDEX_SAVE_AS = 'blog_index.html'
 
 USE_CUSTOM_MENU = True
-MENUITEMS = [('Home', '/index.html'), 
-            ('Blog', '/blog_index.html')]
+MENUITEMS = [('Home', 'index.html'), 
+            ('Blog', 'blog_index.html')]
